@@ -1,5 +1,6 @@
 package io.github.willerlucas.dws.controller;
 
+import io.github.willerlucas.dws.exception.NoContentException;
 import io.github.willerlucas.dws.model.Album;
 import io.github.willerlucas.dws.model.Band;
 import io.github.willerlucas.dws.service.AlbumService;
@@ -20,7 +21,7 @@ public class AlbumController {
     AlbumService albumService;
 
     @GetMapping()
-    public ResponseEntity<List<Album>> getAllAlbums() {
+    public ResponseEntity<List<Album>> getAllAlbums() throws NoContentException {
         return ResponseEntity.status(HttpStatus.OK).body(albumService.getAllAlbums());
     }
 }

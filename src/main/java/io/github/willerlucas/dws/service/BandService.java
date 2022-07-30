@@ -1,5 +1,6 @@
 package io.github.willerlucas.dws.service;
 
+import io.github.willerlucas.dws.exception.NoContentException;
 import io.github.willerlucas.dws.model.Band;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 @Service
 public interface BandService {
-    List<Band> getAllBands();
+    List<Band> getAllBands() throws NoContentException;
 
-    Band getBandById(String bandId);
+    Band getBandById(String bandId) throws NoContentException;
 }
