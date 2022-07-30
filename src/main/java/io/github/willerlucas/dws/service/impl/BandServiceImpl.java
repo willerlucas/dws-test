@@ -22,6 +22,6 @@ public class BandServiceImpl implements BandService {
 
     @Override
     public Band getBandById(String bandId) {
-        return new Band();
+        return bandClient.getBandById(bandId);
     }
 }
