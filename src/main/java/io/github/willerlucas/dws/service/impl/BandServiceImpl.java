@@ -6,6 +6,7 @@ import io.github.willerlucas.dws.exception.NoContentException;
 import io.github.willerlucas.dws.model.Band;
 import io.github.willerlucas.dws.service.BandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class BandServiceImpl implements BandService {
     @Autowired
     BandClient bandClient;
 
+    @Cacheable("bands")
     @Override
     public List<Band> getAllBands() throws NoContentException {
 
@@ -31,6 +33,7 @@ public class BandServiceImpl implements BandService {
         return bandList;
     }
 
+    @Cacheable("band")
     @Override
     public Band getBandById(String bandId) throws NoContentException {
 

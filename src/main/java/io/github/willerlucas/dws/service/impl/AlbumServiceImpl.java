@@ -6,6 +6,7 @@ import io.github.willerlucas.dws.exception.NoContentException;
 import io.github.willerlucas.dws.model.Album;
 import io.github.willerlucas.dws.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Autowired
     AlbumClient albumClient;
 
+    @Cacheable("album")
     @Override
     public List<Album> getAllAlbums() throws NoContentException {
 
