@@ -5,7 +5,6 @@ import feign.RequestLine;
 import io.github.willerlucas.dws.config.FeignConfiguration;
 import io.github.willerlucas.dws.model.Band;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

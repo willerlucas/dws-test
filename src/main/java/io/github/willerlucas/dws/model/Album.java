@@ -1,6 +1,5 @@
 package io.github.willerlucas.dws.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.time.LocalDate;

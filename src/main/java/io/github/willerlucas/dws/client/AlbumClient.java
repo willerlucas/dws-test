@@ -3,7 +3,6 @@ package io.github.willerlucas.dws.client;
 import feign.RequestLine;
 import io.github.willerlucas.dws.config.FeignConfiguration;
 import io.github.willerlucas.dws.model.Album;
-import io.github.willerlucas.dws.model.Band;
 import org.springframework.cloud.openfeign.FeignClient;
 
 import java.util.List;
