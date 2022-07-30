@@ -20,9 +20,11 @@ public class BandsController {
     BandService bandService;
 
     @GetMapping()
-    public ResponseEntity<List<Band>> getAllBands() throws NoContentException {
+    public ResponseEntity<List<Band>> getBands(
+            @RequestParam(value = "order", required = false) String order,
+            @RequestParam(value = "bandName", required = false) String bandName) throws NoContentException {
         log.info("fetch all bands in band controller");
-        return ResponseEntity.status(HttpStatus.OK).body(bandService.getAllBands());
+        return ResponseEntity.status(HttpStatus.OK).body(bandService.getBands(order, bandName));
     }
 
     @GetMapping("/{id}")

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public interface BandService {
-    List<Band> getAllBands() throws NoContentException;
+    List<Band> getBands(String order, String bandName) throws NoContentException;
 
     Band getBandById(String bandId) throws NoContentException;
 }
